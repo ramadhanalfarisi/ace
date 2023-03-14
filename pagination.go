@@ -1,4 +1,4 @@
-package main
+package go_pagination
 
 import (
 	"fmt"
@@ -21,6 +21,10 @@ type Pagination struct {
 	Visible    int64 `json:"visible"`    // total row in current page
 	Last       bool  `json:"last"`       // is last page
 	First      bool  `json:"first"`      // is first page
+}
+
+func GetPagination(page int64, size int64, offset int64, total int64) RequestPagination {
+	return RequestPagination{Page: page, Size: size, Offset: offset, Total: total}
 }
 
 func CreatePagination(req_pagination RequestPagination) (Pagination, error) {
