@@ -5,14 +5,14 @@ import (
 	"math"
 )
 
-type RequestPagination struct {
+type requestPagination struct {
 	Page   int64 `json:"page"`   // current page
 	Size   int64 `json:"size"`   // limit
 	Offset int64 `json:"offset"` // offset
 	Total  int64 `json:"total"`  // total row
 }
 
-type Pagination struct {
+type pagination struct {
 	Page       int64 `json:"page"`       // current page
 	Size       int64 `json:"size"`       // limit
 	Offset     int64 `json:"offset"`     // offset
@@ -23,14 +23,16 @@ type Pagination struct {
 	First      bool  `json:"first"`      // is first page
 }
 
-func GetPagination(page int64, size int64, offset int64, total int64) RequestPagination {
-	return RequestPagination{Page: page, Size: size, Offset: offset, Total: total}
+// GetPagination is used to define pagination object and return it
+func GetPagination(page int64, size int64, offset int64, total int64) requestPagination {
+	return requestPagination{Page: page, Size: size, Offset: offset, Total: total}
 }
 
-func CreatePagination(req_pagination RequestPagination) (Pagination, error) {
+// CreatePagination is used to create pagination response format using pagination object as parameter
+func CreatePagination(req_pagination requestPagination) (pagination, error) {
 	if req_pagination.Size <= req_pagination.Total {
 		if req_pagination.Offset <= req_pagination.Total {
-			var pagination Pagination
+			var pagination pagination
 			if req_pagination.Page == 0 {
 				pagination.Page = 1
 			} else {
@@ -64,10 +66,10 @@ func CreatePagination(req_pagination RequestPagination) (Pagination, error) {
 			}
 			return pagination, nil
 		} else {
-			return Pagination{}, fmt.Errorf("offset have to less than or equals to total")
+			return pagination{}, fmt.Errorf("offset have to less than or equals to total")
 		}
 	} else {
-		return Pagination{}, fmt.Errorf("size have to less than or equals to total")
+		return pagination{}, fmt.Errorf("size have to less than or equals to total")
 	}
 
 }
