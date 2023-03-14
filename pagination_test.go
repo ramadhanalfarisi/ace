@@ -5,7 +5,7 @@ import (
 )
 
 func TestCreatePagination(testing *testing.T) {
-	req_pagination := GetPagination(1, 10, 0, 20)
+	req_pagination := GetPagination(1, 10, 20)
 	pagination, err := CreatePagination(req_pagination)
 	testing.Log(pagination)
 	if err != nil {
