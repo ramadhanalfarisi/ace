@@ -1,5 +1,5 @@
-# ace
-The ace package used to generate pagination response for a much of data result
+# go-pagination
+The go-pagination package used to generate pagination response for a much of data result
 
-###### Install
+### Install
 `go get github.com/ramadhanalfarisi/go-pagination`

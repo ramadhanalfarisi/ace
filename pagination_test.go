@@ -1,4 +1,4 @@
-package ace
+package main
 
 import (
 	"testing"
