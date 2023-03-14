@@ -24,8 +24,11 @@ type pagination struct {
 }
 
 // GetPagination is used to define pagination object and return it
+//
 // page is the page you get
+//
 // size is the number of data in one page
+//
 // total is the number of all data
 func GetPagination(page int64, size int64, total int64) requestPagination {
 	var offset int64
