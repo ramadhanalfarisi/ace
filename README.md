@@ -16,7 +16,7 @@ import (
 
 func main(){
 	get_pagination := go_pagination.GetPagination(1,10,40)
-	create_pagiantion, err := go_pagination.CreatePagination(get_pagination)
+	create_pagiantion, err := get_pagination.CreatePagination()
 	if err != nil {
 		panic(err)
 	}

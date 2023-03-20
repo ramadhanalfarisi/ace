@@ -41,7 +41,7 @@ func GetPagination(page int64, size int64, total int64) requestPagination {
 }
 
 // CreatePagination is used to create pagination response format using pagination object as parameter
-func CreatePagination(req_pagination requestPagination) (pagination, error) {
+func(req_pagination requestPagination) CreatePagination() (pagination, error) {
 	if req_pagination.Size <= req_pagination.Total {
 		if req_pagination.Offset <= req_pagination.Total {
 			var pagination pagination
