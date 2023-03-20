@@ -22,6 +22,6 @@ func main(){
 		panic(err)
 	}
 	response,_ := json.Marshal(create_pagiantion)
-	fmt.Println(response)
+	fmt.Println(string(response))
 }
 ```
