@@ -5,7 +5,8 @@ The go-pagination package used to generate pagination response for a much of dat
 `go get github.com/ramadhanalfarisi/go-pagination`
 
 ### Simple Example
-go`package main
+```go
+package main
 
 import (
 	"encoding/json"
@@ -22,4 +23,5 @@ func main(){
 	}
 	response,_ := json.Marshal(create_pagiantion)
 	fmt.Println(response)
-}`
+}
+```
