@@ -4,7 +4,7 @@ The go-pagination package used to generate pagination response for a much of dat
 ### Install
 `go get github.com/ramadhanalfarisi/go-pagination`
 
-### Simple Example
+### Simple Example Usage
 ```go
 package main
 
